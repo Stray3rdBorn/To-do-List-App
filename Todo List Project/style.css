@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/*Declaring container & header properties*/
+:root {
+  --container-height: 650px;
+  --contaier-width: 500px;
+  --header-height: 150px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', monospace;
+}
+html {
+  font-size: 20px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #213b1d;
+}
+/*Container design*/
+.container {
+  background-color: #213b1d;
+  width: var(--contaier-width);
+  height: var(--container-height);
+  position: relative;
+  overflow: hidden;
+}
+/*Header design*/
+header {
+  width: 100%;
+  height: var(--header-height);
+  background-image: url('./img/task.png');
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+/*Header text design*/
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.new-todo {
+  width: 100%;
+  height: 50px;
+  padding: 0.25rem 0;
+}
+/*Form alignment*/
+.new-todo form {
+  display: flex;
+  align-items: center;
+}
+/*Form input design*/
+.new-todo form input {
+  flex: 1;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-right: 0px;
+  outline: transparent;
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+  color: #090909;
+}
+/*Form button design*/
+.new-todo form button {
+  width: 60px;
+  height: 40px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: rgb(23, 135, 1);
+  border: none;
+  border-left: 0px;
+  cursor: pointer;
+}
+/*Form button hover*/
+.new-todo form button:hover {
+  text-shadow: 1px 1px 30px rgba(47, 227, 12, 5.8);
+}
+/*Todo list design*/
+#todos-list {
+  height: calc(var(--container-height) - var(--header-height));
+  background-color: #e9e9e9;
+  padding: 0.5rem;
+  border: 1px solid rgb(211, 211, 211);
+  overflow: scroll;
+  border-radius: 0 0 5px 5px;
+}
+/*List design*/
+#todos-list .todo {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 5px;
+}
+/*List hover effect*/
+#todos-list .todo:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/*List cursor setup*/
+#todos-list .todo * {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+/*List icon size*/
+#todos-list .todo i {
+  font-size: 1.1rem;
+}
+/*List para design*/
+#todos-list .todo p {
+  flex: 1;
+  word-break: break-all;
+}
+/*Task done icon effects*/
+.checked {
+  text-decoration: line-through;
+  color: rgb(138, 138, 138);
+}
+#todos-list .todo .bi-pencil-square {
+  color: rgb(105, 24, 181);
+}
+#todos-list .todo .bi-trash {
+  color: rgb(227, 17, 17);
+  margin: 0;
+}
+/*Notification popup design*/
+.notification {
+  position: absolute;
+
+  width: 160px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.7;
+
+  border-radius: 6px;
+  background-color: rgb(218, 46, 46);
+  top: 10px;
+  left: calc(-3 * var(--contaier-width) / 4);
+
+  color: #fff;
+
+  transition: 200ms left ease-in-out;
+}
+/*Notif popup location*/
+.notif-enter {
+  left: 10px;
+}
